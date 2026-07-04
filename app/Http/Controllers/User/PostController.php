@@ -8,16 +8,28 @@ class PostController extends Controller
 {
     public function index()
     {
-        return 'user.index';
+        return view('user.posts.index');
+    }
+
+    public function create()
+    {
+        return view('user.posts.create');
+    }
+
+    public function store()
+    {
+        return 'Create';
+    }
+
+    public function edit($post)
+    {
+        return view('user.posts.edit', compact('post'));
     }
 
     public function show($post)
     {
-        return 'user.show ' . $post;
+        return view('user.posts.show', compact('post'));
     }
 
-    public function like($post)
-    {
-        return 'user.like ' . $post;
-    }
+
 }

@@ -7,13 +7,13 @@ class BlogController extends Controller
 {
     public function index() {
 
-        $posts = (object)[
+        $posts = collect(array_fill(0, 10, (object)[
             'id' => 123,
             'title' => 'This is title',
             'body' => 'This is body',
-        ];
-
-        $posts = array_fill(0,10, $posts);
+            'published_at' => null,
+            'links' => null
+        ]));
         return view('blog.index', compact('posts'));
     }
 
