@@ -28,6 +28,6 @@
     </div>
 
     <div class="pt-3">
-        {!! $post->content !!}
+{{--        {!! $post->content !!}--}}
     </div>
 @endsection

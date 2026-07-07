@@ -21,7 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 ->name('admin.')
                 ->group(base_path('routes/admin.php'));
 
-            Route::middleware(['web', 'auth', 'active'])
+            Route::middleware(['web', '', 'active'])
                 ->name('user.')
                 ->group(base_path('routes/user.php'));
         }
@@ -30,8 +30,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             LogMiddleware::class,
         ]);
-
-        $middleware->append(LogMiddleware::class);
 
         $middleware->alias([
             'active' => ActiveMiddleware::class,

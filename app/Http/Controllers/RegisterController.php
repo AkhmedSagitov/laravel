@@ -10,7 +10,13 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    public function store() {
+    public function store(Request $request) {
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $agreement = $request->boolean('agreement');
+
         return view('register.store');
     }
 }

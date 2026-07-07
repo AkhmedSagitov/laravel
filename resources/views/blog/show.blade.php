@@ -13,5 +13,5 @@
         </x-slot>
     </x-title>
 
-    {!! $post->content !!}
+{{--    {!! $post->content !!}--}}
 @endsection
