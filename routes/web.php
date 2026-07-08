@@ -7,6 +7,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Posts\CommentController;
 
+
+Route::get('test', [TestController::class, 'test'])->name('test');
+
 Route::view('/', 'home.index')->name('home');
 
 Route::redirect('/home', '/')->name('home.redirect');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -16,9 +18,12 @@ class PostController extends Controller
         return view('user.posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return 'Create';
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        return redirect()->route('user.posts.show', 123);
     }
 
     public function edit($post)

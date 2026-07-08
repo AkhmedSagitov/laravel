@@ -5,7 +5,7 @@ use App\Http\Controllers\User\PostController;
 
 Route::prefix('user')->group(function () {
 
-    Route::redirect('/', '/user/posts')->name('index');
+    Route::redirect('/', '/user/posts')->name('user');
 
     Route::get('posts', [PostController::class, 'index'])->name('posts');
     Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');

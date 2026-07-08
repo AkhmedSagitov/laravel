@@ -17,6 +17,11 @@ class RegisterController extends Controller
         $password = $request->input('password');
         $agreement = $request->boolean('agreement');
 
-        return view('register.store');
+
+        if(true) {
+            return redirect()->back()->withInput();
+        }
+
+        return redirect()->route('user.posts');
     }
 }
