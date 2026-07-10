@@ -9,7 +9,8 @@ class LoginController extends Controller
 {
     public function index() {
 
-
+        $session = app('session');
+        dd($session);
         return view('login.index');
 
     }
