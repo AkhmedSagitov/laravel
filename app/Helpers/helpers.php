@@ -6,3 +6,11 @@ if (! function_exists('active_link')) {
         return request()->routeIs($route) ? $class : '';
     }
 }
+
+
+if (! function_exists('alert')) {
+    function alert(string $text):void
+    {
+        session(['alert' => $text]);
+    }
+}

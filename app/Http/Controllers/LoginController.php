@@ -9,16 +9,14 @@ class LoginController extends Controller
 {
     public function index() {
 
-        $session = app('session');
-        dd($session);
         return view('login.index');
 
     }
 
     public function store(Request $request)
     {
-
+        alert('Success');
         $ip = $request->ip();
-        return redirect()->route('user');
+        return redirect()->route('user.posts');
     }
 }
