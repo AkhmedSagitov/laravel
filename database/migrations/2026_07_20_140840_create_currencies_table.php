@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('test', function (Blueprint $table) {
-            $table->id();
+        Schema::create('currencies', function (Blueprint $table) {
+            $table->string('id')->unique();
             $table->timestamps();
 
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('avatar')->nullable();
-            $table->boolean('active')->default(true);
 
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name');
+            $table->decimal('price')->unsigned();
+            $table->boolean('active')->default(true);
+            $table->integer('sort')->unsigned()->default(999);
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('test');
+        Schema::dropIfExists('currencies');
     }
 };
